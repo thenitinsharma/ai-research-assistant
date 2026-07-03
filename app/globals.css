@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-sans: "Inter", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html, body {
+  background-color: #F6F5F0;
+  color: #1C2321;
+}
+
+/* Card-catalog signature: a stamped relevance mark, rotated slightly like a
+   real library due-date stamp. Used once per result, sparingly. */
+.stamp {
+  font-family: var(--font-mono);
+  border: 1.5px solid #AE3B2C;
+  color: #AE3B2C;
+  transform: rotate(-4deg);
+  border-radius: 3px;
+  padding: 2px 8px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.index-card {
+  background: #FFFFFF;
+  border: 1px solid #D9D5C9;
+  position: relative;
+}
+
+.index-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #3F6259;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.index-card:hover::before {
+  opacity: 1;
+}
+
+.access-no {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #5B6660;
+  letter-spacing: 0.08em;
+}
+
+.hairline {
+  border-color: #D9D5C9;
+}
+
+::selection {
+  background: #DCE6E2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
