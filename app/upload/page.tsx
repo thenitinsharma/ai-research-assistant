@@ -37,10 +37,10 @@ export default function UploadPage() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto px-8 py-12">
+    <div className="max-w-3xl mx-auto px-4 sm:px-8 py-8 sm:py-12">
       <header className="mb-10">
         <p className="access-no text-archive mb-2">PAPER MATCHING</p>
-        <h1 className="font-serif text-3xl text-ink mb-2">Match your own paper</h1>
+        <h1 className="font-serif text-2xl sm:text-3xl text-ink mb-2">Match your own paper</h1>
         <p className="text-ink-muted text-sm">
           Upload a PDF and find the closest related papers already in the archive.
         </p>
@@ -58,7 +58,7 @@ export default function UploadPage() {
           handleFile(e.dataTransfer.files?.[0] ?? null);
         }}
         onClick={() => inputRef.current?.click()}
-        className={`border-2 border-dashed rounded-sm px-6 py-12 text-center cursor-pointer transition-colors mb-6 ${
+        className={`border-2 border-dashed rounded-sm px-4 sm:px-6 py-10 sm:py-12 text-center cursor-pointer transition-colors mb-6 ${
           dragging ? "border-archive bg-archive-soft/40" : "border-line hover:border-archive/60"
         }`}
       >
@@ -92,8 +92,8 @@ export default function UploadPage() {
           <p className="access-no mb-3">CLOSEST MATCHES</p>
           <div className="space-y-2">
             {results.map((r, i) => (
-              <div key={i} className="index-card p-4 flex items-center justify-between gap-4">
-                <span className="text-sm text-ink">
+              <div key={i} className="index-card p-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+                <span className="text-sm text-ink min-w-0">
                   <span className="access-no mr-3">{String(i + 1).padStart(3, "0")}</span>
                   {r.title.trim()}
                 </span>

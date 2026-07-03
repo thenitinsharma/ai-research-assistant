@@ -33,10 +33,10 @@ export default function SearchPage() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto px-8 py-12">
+    <div className="max-w-3xl mx-auto px-4 sm:px-8 py-8 sm:py-12">
       <header className="mb-10">
         <p className="access-no text-archive mb-2">CATALOG SEARCH</p>
-        <h1 className="font-serif text-3xl text-ink mb-2">Find a paper</h1>
+        <h1 className="font-serif text-2xl sm:text-3xl text-ink mb-2">Find a paper</h1>
         <p className="text-ink-muted text-sm">
           Semantic search across 15,000 ML-ArXiv papers, with auto-generated summaries and
           entity-tagged keywords for each result.
@@ -50,9 +50,9 @@ export default function SearchPage() {
         }}
         className="mb-3"
       >
-        <div className="flex gap-2">
+        <div className="flex flex-col sm:flex-row gap-2">
           <input
-            className="flex-1 border hairline bg-surface px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-archive/40 rounded-sm"
+            className="flex-1 min-w-0 border hairline bg-surface px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-archive/40 rounded-sm"
             placeholder="e.g. deep learning for medical image analysis"
             value={query}
             onChange={(e) => setQuery(e.target.value)}

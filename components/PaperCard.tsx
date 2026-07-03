@@ -5,9 +5,9 @@ export default function PaperCard({ paper, index }: { paper: SearchResult; index
   const relevance = Math.round(paper.score * 100);
 
   return (
-    <article className="index-card p-6 mb-4">
-      <div className="flex items-start justify-between gap-4 mb-3">
-        <div>
+    <article className="index-card p-4 sm:p-6 mb-4">
+      <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2 mb-3">
+        <div className="min-w-0 flex-1">
           <p className="access-no mb-1">ACCESSION No. {String(index + 1).padStart(3, "0")}</p>
           <h3 className="font-serif text-lg leading-snug text-ink">{paper.title.trim()}</h3>
         </div>

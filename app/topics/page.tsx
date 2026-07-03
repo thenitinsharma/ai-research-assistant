@@ -33,10 +33,10 @@ export default function TopicsPage() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-8 py-12">
+    <div className="max-w-4xl mx-auto px-4 sm:px-8 py-8 sm:py-12">
       <header className="mb-10">
         <p className="access-no text-archive mb-2">BERTopic CLUSTERING</p>
-        <h1 className="font-serif text-3xl text-ink mb-2">Browse by topic</h1>
+        <h1 className="font-serif text-2xl sm:text-3xl text-ink mb-2">Browse by topic</h1>
         <p className="text-ink-muted text-sm">
           Papers are auto-clustered into research areas. Select a cluster to see its papers.
         </p>

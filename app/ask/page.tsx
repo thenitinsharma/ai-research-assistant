@@ -25,18 +25,18 @@ export default function AskPage() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto px-8 py-12">
+    <div className="max-w-3xl mx-auto px-4 sm:px-8 py-8 sm:py-12">
       <header className="mb-10">
         <p className="access-no text-archive mb-2">RETRIEVAL-AUGMENTED Q&A</p>
-        <h1 className="font-serif text-3xl text-ink mb-2">Ask the archive</h1>
+        <h1 className="font-serif text-2xl sm:text-3xl text-ink mb-2">Ask the archive</h1>
         <p className="text-ink-muted text-sm">
           Answers are grounded only in retrieved paper excerpts — every claim is cited back to its source.
         </p>
       </header>
 
-      <div className="flex gap-2 mb-10">
+      <div className="flex flex-col sm:flex-row gap-2 mb-10">
         <textarea
-          className="flex-1 border hairline bg-surface px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-archive/40 rounded-sm resize-none"
+          className="flex-1 min-w-0 border hairline bg-surface px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-archive/40 rounded-sm resize-none"
           rows={2}
           placeholder="What are the main challenges in using deep learning for medical imaging?"
           value={question}
@@ -51,7 +51,7 @@ export default function AskPage() {
         <button
           onClick={handleAsk}
           disabled={loading}
-          className="bg-ink text-bone px-6 text-sm font-medium rounded-sm hover:bg-archive transition-colors disabled:opacity-50"
+          className="bg-ink text-bone px-6 py-3 sm:py-0 text-sm font-medium rounded-sm hover:bg-archive transition-colors disabled:opacity-50"
         >
           {loading ? "Thinking…" : "Ask"}
         </button>
@@ -92,8 +92,8 @@ export default function AskPage() {
             <p className="access-no mb-3">SOURCES CITED</p>
             <ol className="space-y-2">
               {result.sources.map((s, i) => (
-                <li key={i} className="flex items-baseline justify-between gap-4 text-sm">
-                  <span className="text-ink">
+                <li key={i} className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 text-sm">
+                  <span className="text-ink min-w-0">
                     <span className="font-mono text-xs text-archive mr-2">[{i + 1}]</span>
                     {s.title.trim()}
                   </span>
