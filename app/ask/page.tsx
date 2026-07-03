@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { api, AskResult } from "@/lib/api";
+import ReactMarkdown from "react-markdown";
 
 export default function AskPage() {
   const [question, setQuestion] = useState("");
@@ -74,7 +75,18 @@ export default function AskPage() {
       {!loading && result && (
         <div className="index-card p-7">
           <p className="access-no mb-2">ANSWER</p>
-          <p className="text-ink leading-relaxed whitespace-pre-line mb-6">{result.answer}</p>
+          <div className="text-ink leading-relaxed mb-6 [&_p]:mb-3 [&_p:last-child]:mb-0">
+            <ReactMarkdown
+              components={{
+                strong: ({ children }) => <strong className="font-semibold text-archive">{children}</strong>,
+                ol: ({ children }) => <ol className="list-decimal ml-5 space-y-1.5">{children}</ol>,
+                ul: ({ children }) => <ul className="list-disc ml-5 space-y-1.5">{children}</ul>,
+                li: ({ children }) => <li className="leading-relaxed">{children}</li>,
+              }}
+            >
+              {result.answer}
+            </ReactMarkdown>
+          </div>
 
           <div className="pt-4 border-t hairline">
             <p className="access-no mb-3">SOURCES CITED</p>
