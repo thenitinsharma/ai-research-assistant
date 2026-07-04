@@ -1,19 +1,3 @@
-"""
-Run this ONCE (locally or in Colab) to precompute everything the backend needs,
-so the deployed Space doesn't have to download the dataset / build embeddings /
-fit BERTopic on every cold start.
-
-Outputs (copy all of these into backend/data/ before deploying):
-    papers.parquet          -> cleaned dataframe (title, abstract, paper_text)
-    paper_embeddings.npy    -> sentence-transformer embeddings
-    paper_faiss.index       -> FAISS index
-    bertopic_model/         -> saved BERTopic model + topic assignments folded into papers.parquet
-
-Usage:
-    pip install -r requirements.txt
-    python precompute.py
-"""
-
 import numpy as np
 import pandas as pd
 import faiss
