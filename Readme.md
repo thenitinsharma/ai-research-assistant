@@ -109,4 +109,4 @@ Open http://localhost:3000.
 
 **Nitin Kumar Sharma**
 B.Tech CSE (AI & ML), AKTU — GSSoC '26 Contributor
-[GitHub](https://github.com/thenitinsharma) · [LinkedIn](https://linkedin.com/in/thenitinsharma)
+[GitHub](https://github.com/thenitinsharma) · [LinkedIn](https://www.linkedin.com/in/nitin-kumar-sharma-15a897247/)
