@@ -1,13 +1,3 @@
-"""
-AI Research Assistant - FastAPI Backend
-Wraps the notebook pipeline (search, summarize, keyword+entity extraction,
-RAG chatbot, topic clustering, PDF matching) as REST endpoints for the
-Next.js dashboard.
-
-Run with:
-    uvicorn main:app --reload --port 8000
-"""
-
 import os
 import shutil
 import tempfile
